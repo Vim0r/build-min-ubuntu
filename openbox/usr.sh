@@ -18,4 +18,3 @@ echo 'xscreensaver -no-splash &' >> autostart
 echo 'tint2 &' >> autostart
 echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
 echo 'volumeicon &' >> autostart
-echo '' >> autostart
