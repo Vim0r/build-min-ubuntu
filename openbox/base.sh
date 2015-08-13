@@ -24,8 +24,13 @@ sudo echo 'tmpfs /var/tmp tmpfs noatime,size=256M 0 0' >> fstab
 sudo echo 'tmpfs /var/log tmpfs noatime,size=256M 0 0' >> fstab
 sudo echo 1 > /proc/sys/vm/swappiness
 
+# set audio
+sudo apt-get install alsa-base alsa-utils volumeicon-alsa -y
+sudo alsactl init
+
 # set autostart
-sudo echo 'eval `cat $HOME/.fehbg` &' >> /etc/xdg/openbox/autostart
+sudo echo 'eval `cat $HOME/.fehbg` &' > /etc/xdg/openbox/autostart
 sudo echo 'tint2 &' >> /etc/xdg/openbox/autostart
 sudo echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> /etc/xdg/openbox/autostart
+sudo echo 'volumeicon &' >> /etc/xdg/openbox/autostart
 sudo echo '' >> /etc/xdg/openbox/autostart
