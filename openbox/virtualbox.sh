@@ -5,7 +5,7 @@ sudo apt-get install python-software-properties software-properties-common -y
 sudo add-apt-repository ppa:satyajit-happy/themes -y
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install build-essential xorg openbox slim thunar -y
-sudo apt-get install feh lxappearance obmenu qt4-qtconfig menu gksu hal-info upower -y
+sudo apt-get install feh lxappearance obmenu qt4-qtconfig menu gksu hal-info upower fonts-droid -y
 sudo apt-get install numix-gtk-theme -y
 sudo apt-get install gnome-icon-theme fcitx-rime xcompmgr leafpad xfce4-notifyd xfce4-terminal xfce4-indicator-plugin -y
 
@@ -39,14 +39,3 @@ ln -sT /tmp ~/.cache
 
 # set path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
-
-# set font
-cd ~
-mkdir /usr/share/fonts/custom
-wget http://2dx.pc6.com/qd2/pc6-consolaztxz.zip
-unzip pc6-consolaztxz.zip
-sudo cp consola.ttf /usr/share/fonts/custom/
-cd /usr/share/fonts/custom
-sudo mkfontscale
-sudo mkfontdir
-sudo apt-get install fonts-droid -y
