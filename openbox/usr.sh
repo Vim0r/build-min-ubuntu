@@ -18,3 +18,18 @@ echo 'xscreensaver -no-splash &' >> autostart
 echo 'tint2 &' >> autostart
 echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
 echo 'volumeicon &' >> autostart
+
+# set terminal
+# =======add in /home/vm/.config/openbox/rc.xml==========
+#    </keybind>
+#       <keybind key="F12">
+#      <action name="Execute">
+#        <command>    xfce4-terminal --drop-down</command>
+#      </action>
+#    </keybind>
+# =======edit in /home/vm/.config/openbox/rc.xml==========
+#    <keybind key="W-Home">
+#      <action name="Execute">
+#        <command>xfce4-screenshooter</command>
+#      </action>
+#    </keybind>
