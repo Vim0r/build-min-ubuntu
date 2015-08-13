@@ -1,4 +1,6 @@
-# build-min-ubuntu
+# imu
+
+imu=imini ubuntu
 
 language=zh-CN.UTF8
 
