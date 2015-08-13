@@ -9,8 +9,8 @@ sudo add-apt-repository ppa:satyajit-happy/themes -y
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install bcmwl-kernel-source broadcom-sta-common -y
 sudo apt-get install xorg openbox slim thunar -y
-sudo apt-get install feh lxappearance obmenu qt4-qtconfig gtk-chtheme menu build-essential fonts-droid gksu hal-info upower -y
-sudo apt-get install wicd tint2 fcitx-rime xcompmgr leafpad xfce4-notifyd xfce4-screenshooter synaptic -y
+sudo apt-get install feh lxappearance obmenu qt4-qtconfig gtk-chtheme menu build-essential fonts-droid gksu hal-info upower gnome-icon-theme -y
+sudo apt-get install wicd tint2 fcitx-rime xcompmgr leafpad xfce4-notifyd xfce4-screenshooter synaptic xfce4-terminal -y
 sudo apt-get install numix-gtk-theme -y
 sudo apt-get install xarchiver p7zip-full rar unrar unzip thunar-archive-plugin -y
 sudo apt-get install firefox firefox-locale-zh-hans -y
