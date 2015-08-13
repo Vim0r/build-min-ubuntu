@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # add openbox logout panel
 # url=http://www.cnblogs.com/lizunicon/p/3556943.html by  怒杀神殿
+# =======How to user============
+# sudo cp ./cb-exit /usr/bin/cb-exit
+# sudo chmod +x /usr/bin/cb-exit
   
 import pygtk
 pygtk.require('2.0')
