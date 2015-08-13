@@ -1,16 +1,13 @@
 #!/bin/sh
 
-# set sources.list
-sudo sed -i '/cdrom/d' /etc/apt/sources.list
-
 # install program
 sudo apt-get install python-software-properties software-properties-common -y
 sudo add-apt-repository ppa:satyajit-happy/themes -y
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install xorg openbox slim thunar -y
-sudo apt-get install feh lxappearance obmenu qt4-qtconfig gtk-chtheme menu build-essential fonts-droid gksu hal-info upower gnome-icon-theme -y
-sudo apt-get install tint2 fcitx-rime xcompmgr leafpad xfce4-notifyd xfce4-terminal -y
+sudo apt-get install build-essential xorg openbox slim thunar -y
+sudo apt-get install feh lxappearance obmenu qt4-qtconfig menu fonts-droid gksu hal-info upower -y
 sudo apt-get install numix-gtk-theme -y
+sudo apt-get install gnome-icon-theme fcitx-rime xcompmgr leafpad xfce4-notifyd xfce4-terminal xfce4-indicator-plugin -y
 
 # set ramdisk
 sudo cp /etc/fstab /etc/fstab.bak
@@ -25,8 +22,20 @@ sudo apt-get install alsa-base alsa-utils volumeicon-alsa -y
 sudo alsactl init
 
 # set autostart
-sudo echo 'eval `cat $HOME/.fehbg` &' > /etc/xdg/openbox/autostart
-sudo echo 'tint2 &' >> /etc/xdg/openbox/autostart
-sudo echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> /etc/xdg/openbox/autostart
-sudo echo 'volumeicon &' >> /etc/xdg/openbox/autostart
-sudo echo '' >> /etc/xdg/openbox/autostart
+mkdir ~/.config/openbox
+cd ~/.config/openbox
+echo '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &' > autostart
+echo 'eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &' >> autostart
+echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
+echo 'eval `cat $HOME/.fehbg` &' >> autostart
+echo 'xfce4-panel &' >> autostart
+echo 'volumeicon &' >> autostart
+echo 'numlockx on &' >> autostart
+echo 'xscreensaver -no-splash &' >> autostart
+
+# set ramdisk
+rm -rf ~/.cache
+ln -sT /tmp ~/.cache
+
+# set path
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
