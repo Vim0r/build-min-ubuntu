@@ -14,14 +14,12 @@ sudo apt-get install alsa-base alsa-utils volumeicon-alsa -y
 sudo alsactl init
 
 # set autostart
-mkdir ~/.config
-mkdir ~/.config/openbox
-cd ~/.config/openbox
-echo '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &' > autostart
-echo 'eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &' >> autostart
-echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
-echo 'eval `cat $HOME/.fehbg` &' >> autostart
-echo 'xfce4-panel &' >> autostart
+sudo cd /etc/xdg/openbox/
+sudo echo '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &' > autostart
+sudo echo 'eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &' >> autostart
+sudo echo 'eval `cat $HOME/.fehbg` &' >> autostart
+sudo echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
+sudo echo 'xfce4-panel &' >> autostart
 
 # set path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
