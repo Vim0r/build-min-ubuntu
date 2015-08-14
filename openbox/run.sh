@@ -14,7 +14,7 @@ sudo apt-get install wicd xfce4-screenshooter xarchiver unzip p7zip-full rar unr
 # set audio
 sudo apt-get install alsa-base alsa-utils -y
 sudo alsactl init
-sudo apt-get install volumeicon-alsa -y
+sudo apt-get install xfce4-mixer -y
 
 # set path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
@@ -25,7 +25,6 @@ ln -sT /tmp ~/.cache
 mkdir ~/.config/openbox
 cd ~/.config/openbox
 echo 'xscreensaver -no-splash &' > autostart
-echo 'volumeicon &' >> autostart
 echo 'eval `cat $HOME/.fehbg` &' >> autostart
 echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
 echo 'xfce4-panel &' >> autostart
