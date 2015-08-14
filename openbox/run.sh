@@ -7,7 +7,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install build-essential xorg openbox slim thunar -y
 sudo apt-get install bcmwl-kernel-source broadcom-sta-common -y
 sudo apt-get install feh lxappearance obmenu qt4-qtconfig menu gksu hal-info upower -y
-sudo apt-get install gnome-icon-theme numix-gtk-theme -y
+sudo apt-get install gnome-icon-theme numix-gtk-theme pixmap -y
 sudo apt-get install fcitx-rime xcompmgr xfce4-notifyd xfce4-terminal xfce4-indicator-plugin fonts-droid xscreensaver -y
 sudo apt-get install wicd xfce4-screenshooter xarchiver unzip p7zip-full rar unrar thunar-archive-plugin firefox firefox-locale-zh-hans -y
 
