@@ -19,17 +19,16 @@ sudo alsactl init
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
 
 # set autostart
-mkdir ~/.config
-mkdir ~/.config/openbox
-cd ~/.config/openbox
-echo '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &' > autostart
-echo 'eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &' >> autostart
-echo 'eval `cat $HOME/.fehbg` &' >> autostart
-echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
-echo 'xscreensaver -no-splash &' >> autostart
-echo 'xfce4-panel &' >> autostart
-echo 'volumeicon &' >> autostart
-echo 'numlockx on &' >> autostart
+# set autostart
+sudo cd /etc/xdg/openbox/
+sudo echo '/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &' > autostart
+sudo echo 'eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &' >> autostart
+sudo echo 'eval `cat $HOME/.fehbg` &' >> autostart
+sudo echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
+sudo echo 'xscreensaver -no-splash &' >> autostart
+sudo echo 'xfce4-panel &' >> autostart
+sudo echo 'volumeicon &' >> autostart
+sudo echo 'numlockx on &' >> autostart
 
 # set terminal
 # =======add in /home/vm/.config/openbox/rc.xml==========
