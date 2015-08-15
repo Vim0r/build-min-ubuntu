@@ -17,7 +17,7 @@ ALL   ALL=NOPASSWD:/sbin/poweroff
 			</action>
 		</item>
 
-# set terminal
+# set keybind
 # =======add in /home/vm/.config/openbox/rc.xml==========
     <keybind key="F12">
       <action name="Execute">
@@ -29,3 +29,14 @@ ALL   ALL=NOPASSWD:/sbin/poweroff
         <command>xfce4-screenshooter</command>
       </action>
     </keybind>
+	<keybind key="C-A-space">
+		<action name="ShowMenu"><menu>root-menu</menu></action>
+	</keybind>
+    
+# set obmenu
+sudo apt-get install openbox-xdgmenu xdotool
+openbox-xdgmenu "/etc/xdg/menus/xfce-applications.menu"
+# then copy to ~/.config/openbox/menu.xml
+# xdotool key ctrl+alt+space = open openbox menu
+# ====add this in tint2rc=======
+clock_lclick_command = xdotool key ctrl+alt+space
