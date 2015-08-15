@@ -29,9 +29,16 @@ ALL   ALL=NOPASSWD:/sbin/poweroff
         <command>xfce4-screenshooter</command>
       </action>
     </keybind>
-	<keybind key="C-A-space">
-		<action name="ShowMenu"><menu>root-menu</menu></action>
-	</keybind>
+    <keybind key="C-A-space">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="C-A-p">
+      <action name="ShowMenu">
+        <menu>client-list-combined-menu</menu>
+      </action>
+    </keybind>
     
 # set obmenu
 sudo apt-get install openbox-xdgmenu xdotool
@@ -39,4 +46,6 @@ openbox-xdgmenu "/etc/xdg/menus/xfce-applications.menu"
 # then copy to ~/.config/openbox/menu.xml
 # xdotool key ctrl+alt+space = open openbox menu
 # ====add this in tint2rc=======
+# clock_rclick_command = orange
+clock_rclick_command = xdotool key ctrl+alt+p
 clock_lclick_command = xdotool key ctrl+alt+space
