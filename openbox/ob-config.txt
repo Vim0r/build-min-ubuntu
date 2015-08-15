@@ -19,22 +19,13 @@ ALL   ALL=NOPASSWD:/sbin/poweroff
 
 # set terminal
 # =======add in /home/vm/.config/openbox/rc.xml==========
-    </keybind>
-       <keybind key="F12">
+    <keybind key="F12">
       <action name="Execute">
-        <command>    xfce4-terminal --drop-down</command>
+        <command>xfce4-terminal --drop-down</command>
       </action>
     </keybind>
-# =======edit in /home/vm/.config/openbox/rc.xml==========
     <keybind key="W-Home">
       <action name="Execute">
         <command>xfce4-screenshooter</command>
       </action>
     </keybind>
-
-# ====aotu startx=============
-cp /etc/profile ~/.profile
-# add at end:
-if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
-   startx
-fi
