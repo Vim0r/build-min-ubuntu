@@ -3,19 +3,33 @@
 # install program
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install build-essential xorg openbox thunar -y
-sudo apt-get install gksu hal-info upower pm-utils python-software-properties software-properties-common -y
-sudo apt-get install gnome-icon-theme feh lxappearance obmenu menu -y
-sudo apt-get install fcitx-rime fonts-droid tint2 -y
-#sudo apt-get install xfce4-notifyd xfce4-terminal xfce4-indicator-plugin -y
+sudo apt-get install gksu hal-info upower pm-utils -y
+sudo apt-get install feh lxappearance obmenu gnome-icon-theme ubuntu-mono gtk2-engines-murrine dmz-cursor-theme -y
+sudo apt-get install fcitx-rime tint2 fonts-droid numlockx -y
+sudo apt-get install unzip p7zip-full rar unrar -y
 
 # set audio
-sudo apt-get install alsa-base alsa-utils -y
+sudo apt-get install alsa-base alsa-utils alsa-tools-gui -y
 sudo alsactl init
 
 # set autostart
+mkdir ~/.config
 mkdir ~/.config/openbox
 cd ~/.config/openbox
 echo 'eval `cat $HOME/.fehbg` &' > autostart
+echo 'numlockx &' >> autostart
+echo 'tint2 &' >> autostart
 
 # set path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
+rm -rf ~/.cache
+ln -sT /tmp ~/.cache
+
+# startx openbox-session
+cd ~
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+echo 'exec openbox-session' >> .xinitrc
+cp /etc/profile ~/.profile
+echo 'if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
+   startx
+fi' >> .profile
