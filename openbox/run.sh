@@ -1,13 +1,11 @@
 #!/bin/sh
 
 # install program
-sudo apt-get install python-software-properties software-properties-common -y
-sudo add-apt-repository ppa:satyajit-happy/themes -y
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install build-essential xorg openbox slim thunar -y
+sudo apt-get install build-essential xorg openbox thunar -y
 sudo apt-get install bcmwl-kernel-source broadcom-sta-common -y
-sudo apt-get install feh lxappearance obmenu qt4-qtconfig menu gksu hal-info upower -y
-sudo apt-get install gnome-icon-theme numix-gtk-theme pixmap -y
+sudo apt-get install gksu hal-info upower pm-utils python-software-properties software-properties-common -y
+sudo apt-get install feh lxappearance obmenu qt4-qtconfig menu gnome-icon-theme-full pixmap gtk2-engines-murrine gtk2-engines-pixbuf dmz-cursor-theme -y
 sudo apt-get install fcitx-rime xcompmgr xfce4-notifyd xfce4-terminal xfce4-indicator-plugin fonts-droid xscreensaver -y
 sudo apt-get install wicd xfce4-screenshooter xarchiver unzip p7zip-full rar unrar thunar-archive-plugin firefox firefox-locale-zh-hans -y
 
@@ -30,19 +28,6 @@ echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
 echo 'xfce4-panel &' >> autostart
 
 # set network
-sudo sed '/usb/d' /etc/network/interfaces
-
-# set terminal
-# =======add in /home/vm/.config/openbox/rc.xml==========
-#    </keybind>
-#       <keybind key="F12">
-#      <action name="Execute">
-#        <command>    xfce4-terminal --drop-down</command>
-#      </action>
-#    </keybind>
-# =======edit in /home/vm/.config/openbox/rc.xml==========
-#    <keybind key="W-Home">
-#      <action name="Execute">
-#        <command>xfce4-screenshooter</command>
-#      </action>
-#    </keybind>
+mkdir ~/bak
+cp /etc/network/interfaces ~/bak
+sudo sed -i '/usb/d' /etc/network/interfaces
