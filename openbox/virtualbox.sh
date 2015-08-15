@@ -18,7 +18,7 @@ mkdir ~/.config/openbox
 cd ~/.config/openbox
 echo 'eval `cat $HOME/.fehbg` &' > autostart
 echo 'numlockx &' >> autostart
-echo 'tint2 &' >> autostart
+echo '(sleep 2s && tint2) &' >> autostart
 
 # set path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
@@ -27,9 +27,13 @@ ln -sT /tmp ~/.cache
 
 # startx openbox-session
 cd ~
+
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo 'exec openbox-session' >> .xinitrc
+
 cp /etc/profile ~/.profile
-echo 'if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
-   startx
-fi' >> .profile
+echo '
+if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
+	startx
+fi
+' >> .profile
