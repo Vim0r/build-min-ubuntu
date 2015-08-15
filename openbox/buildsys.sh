@@ -5,7 +5,7 @@ sudo apt-get install build-essential xorg openbox thunar -y
 sudo apt-get install bcmwl-kernel-source broadcom-sta-common -y
 sudo apt-get install gksu hal-info upower pm-utils python-software-properties software-properties-common -y
 sudo apt-get install feh lxappearance obmenu qt4-qtconfig menu gnome-icon-theme ubuntu-mono pixmap gtk2-engines-murrine gtk2-engines-pixbuf dmz-cursor-theme -y
-sudo apt-get install fcitx-rime wicd xcompmgr tint2 fonts-droid xscreensaver numlockx -y
+sudo apt-get install fcitx-rime wicd compton tint2 fonts-droid xscreensaver numlockx -y
 sudo apt-get install xarchiver unzip p7zip-full rar unrar firefox firefox-locale-zh-hans -y
 
 # set audio
@@ -24,7 +24,7 @@ mkdir ~/.config/openbox
 cd ~/.config/openbox
 echo 'xscreensaver -no-splash &' > autostart
 echo 'eval `cat $HOME/.fehbg` &' >> autostart
-echo 'xcompmgr -cCfF -r5 -o.30 -l-5 -t-1 -D5 &' >> autostart
+echo 'compton -cC -f -i 1.0 -e 1.0 -o 1.0 -r 6 -l -4 -t -4 -I 0.30 -O 0.05 -D 2 -G -b &' >> autostart
 echo 'numlockx &' >> autostart
 echo 'tint2 &' >> autostart
 echo 'volumeicon &' >> autostart
