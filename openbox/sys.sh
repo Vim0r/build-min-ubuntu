@@ -25,7 +25,7 @@ mkdir ~/.config/openbox
 cd ~/.config/openbox
 echo 'xscreensaver -no-splash &' > autostart
 echo 'eval `cat $HOME/.fehbg` &' >> autostart
-echo 'compton -cb -I 0.30 --shadow-opacity 0.7 --shadow-offset-x -11 --shadow-offset-y -11' >> autostart
+echo 'compton -c -b -I 0.4 -O 0.4 -o 0.38 -t-17 -l-16 &' >> autostart
 echo '(sleep 1s && tint2) &' >> autostart
 echo '(sleep 2s && volumeicon) &' >> autostart
 
