@@ -3,7 +3,7 @@
 # install program
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install build-essential xorg openbox thunar -y
-sudo apt-get install gksu hal-info upower pm-utils -y
+sudo apt-get install gksu hal-info upower pm-utils xvfb -y
 sudo apt-get install feh lxappearance obmenu gnome-icon-theme ubuntu-mono gtk2-engines-murrine gtk2-engines-pixbuf gtk3-engines-unico dmz-cursor-theme -y
 sudo apt-get install fcitx-rime tint2 fonts-droid numlockx -y
 sudo apt-get install zip unzip p7zip-full rar unrar -y
