@@ -9,6 +9,7 @@
 # mv .utserver ~/.utserver
 # nano utorrent.sh
 # cope ALL TEXT to the file
+# chmod 777 ~/.utserver/utorrent.sh
 
 cd ~/.utserver
 ./utserver &
