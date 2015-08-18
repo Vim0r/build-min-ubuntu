@@ -1,44 +1,18 @@
-====How to reboot/poweroff in openbox without passwd=======
-  sudo visudo
-## add:
-ALL   ALL=NOPASSWD:/sbin/reboot
-ALL   ALL=NOPASSWD:/sbin/poweroff
-  nano ~/.config/openbox/menu.xml
-## add:
-		<separator label="Logout"/>
-		<item label="ReBoot">
-			<action name="Execute">
-				<execute>sudo /sbin/reboot</execute>
-			</action>
-		</item>
-		<item label="PowerOff">
-			<action name="Execute">
-				<execute>sudo /sbin/poweroff</execute>
-			</action>
-		</item>
-
 # set keybind
 # =======add in /home/vm/.config/openbox/rc.xml==========
     <keybind key="F12">
       <action name="Execute">
-        <command>xfce4-terminal --drop-down</command>
+        <command>lxterminal</command>
       </action>
     </keybind>
     <keybind key="W-Home">
       <action name="Execute">
-        <command>xfce4-screenshooter</command>
+        <command>gnome-screenshot -a</command>
       </action>
     </keybind>
-    <keybind key="C-A-space">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="C-A-p">
-      <action name="ShowMenu">
-        <menu>client-list-combined-menu</menu>
-      </action>
-    </keybind>
+	<keybind key="C-A-space">
+		<action name="ShowMenu"><menu>root-menu</menu></action>
+	</keybind>
     
 # set obmenu
 sudo apt-get install openbox-xdgmenu xdotool
