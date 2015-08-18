@@ -5,8 +5,8 @@ sudo apt-get install build-essential xorg openbox pcmanfm udevil sshfs -y
 sudo apt-get install bcmwl-kernel-source broadcom-sta-common -y
 sudo apt-get install gksu hal-info upower pm-utils python-software-properties software-properties-common xvfb -y
 sudo apt-get install feh tint2 lxappearance obmenu qt4-qtconfig gnome-icon-theme ubuntu-mono pixmap gtk2-engines-murrine gtk2-engines-pixbuf gtk3-engines-unico dmz-cursor-theme -y
-sudo apt-get install fcitx-rime wicd compton fonts-droid xscreensaver numlockx lxterminal xdg-user-dirs -y
-sudo apt-get install xarchiver zip unzip p7zip-full rar unrar firefox firefox-locale-zh-hans -y
+sudo apt-get install fcitx-rime wicd compton fonts-droid xscreensaver numlockx xdg-user-dirs -y
+sudo apt-get install tilda xarchiver zip unzip p7zip-full rar unrar firefox firefox-locale-zh-hans -y
 #sudo apt-get install openbox-xdgmenu xdotool gnome-screenshot -y
 
 # set audio
@@ -25,9 +25,10 @@ mkdir ~/.config/openbox
 cd ~/.config/openbox
 echo 'xscreensaver -no-splash &' > autostart
 echo 'eval `cat $HOME/.fehbg` &' >> autostart
-echo "compton -c -b -I 0.4 -O 0.4 -o 0.38 -t-17 -l-16 -e 0.96 -i 0.8 --backend xrender --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'" >> autostart
+echo 'compton -c -b -I 0.4 -O 0.4 -o 0.38 -t-17 -l-16 -e 0.96 -i 0.8 --backend xrender' >> autostart
 echo '(sleep 1s && tint2) &' >> autostart
 echo '(sleep 2s && volumeicon) &' >> autostart
+echo '(sleep 3s && tilda -h) &' >> autostart
 
 # set network
 mkdir ~/bak
