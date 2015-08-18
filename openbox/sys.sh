@@ -5,9 +5,9 @@ sudo apt-get install build-essential xorg openbox pcmanfm udevil sshfs -y
 sudo apt-get install bcmwl-kernel-source broadcom-sta-common -y
 sudo apt-get install gksu hal-info upower pm-utils python-software-properties software-properties-common xvfb -y
 sudo apt-get install feh tint2 lxappearance obmenu qt4-qtconfig gnome-icon-theme ubuntu-mono pixmap gtk2-engines-murrine gtk2-engines-pixbuf gtk3-engines-unico dmz-cursor-theme -y
-sudo apt-get install fcitx-rime wicd compton fonts-droid xscreensaver numlockx xfce4-terminal xdg-user-dirs -y
+sudo apt-get install fcitx-rime wicd compton fonts-droid xscreensaver numlockx lxterminal xdg-user-dirs -y
 sudo apt-get install xarchiver zip unzip p7zip-full rar unrar firefox firefox-locale-zh-hans -y
-#sudo apt-get install openbox-xdgmenu xdotool -y
+#sudo apt-get install openbox-xdgmenu xdotool gnome-screenshot -y
 
 # set audio
 sudo apt-get install alsa-base alsa-utils alsa-tools-gui -y
