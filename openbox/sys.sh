@@ -7,6 +7,7 @@ sudo apt-get install gksu hal-info upower pm-utils python-software-properties so
 sudo apt-get install feh tint2 lxappearance obmenu qt4-qtconfig gnome-icon-theme ubuntu-mono pixmap gtk2-engines-murrine gtk2-engines-pixbuf gtk3-engines-unico dmz-cursor-theme -y
 sudo apt-get install fcitx-rime wicd compton fonts-droid xscreensaver numlockx xdg-user-dirs -y
 sudo apt-get install tilda xarchiver zip unzip p7zip-full rar unrar firefox firefox-locale-zh-hans -y
+sudo apt-get install mtp-server mtp-tools mtpfs -y
 #sudo apt-get install openbox-xdgmenu xdotool gnome-screenshot -y
 
 # set audio
@@ -16,8 +17,8 @@ sudo apt-get install volumeicon-alsa -y
 
 # set path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/:/sbin:/bin:/usr/game:$PATH
-rm -rf ~/.cache
-ln -sT /tmp ~/.cache
+#rm -rf ~/.cache
+#ln -sT /tmp ~/.cache
 
 # set autostart
 mkdir ~/.config
